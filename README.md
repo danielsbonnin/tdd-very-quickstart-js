@@ -25,5 +25,5 @@ module.exports = function(config) {
 }
 ```
 4) Create src directory
-5) Run command: karma start karma.conf.js, in top directory
+5) Run command:./node_modules/karma/bin/karma start karma.conf.js, from top directory
 6) Add .js code, and .spec.js tests as desired
