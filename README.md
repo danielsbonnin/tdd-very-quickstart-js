@@ -3,27 +3,19 @@ minimal setup for katas in node
 
 ### Starting with an empty directory
 1) Run command: npm init (use all defaults)
-2) Install jasmine, karma, and headless Chrome launcher:
+2) Install mocha, chai:
 
-```npm install --save-dev jasmine-core karma karma-jasmine karma-chrome-launcher```
+```npm install --save-dev mocha chai```
 
-3) Create file karma.conf.js:
+3) Create file .mocharc.js to top directory of project:
 
 ```
-module.exports = function(config) {
-    config.set({
-        frameworks: ['jasmine'],
-
-        files: [
-            'src/**/*.js'
-        ],
-
-        reporters: ['progress'],
-
-        browsers: ['ChromeHeadless']
-    })
-}
+module.exports = {
+  "spec":  "./!(node_modules)**/*.spec.js",
+  "recursive": true,
+  "watch": true
+};
 ```
-4) Create src directory
-5) Run command:./node_modules/karma/bin/karma start karma.conf.js, from top directory
-6) Add .js code, and .spec.js tests as desired
+
+5) Run command: "mocha", from top directory, or set "mocha" as the "test" command, in package.json
+6) Add .js code, and .spec.js tests as desired, and test results should update, live, in the terminal
