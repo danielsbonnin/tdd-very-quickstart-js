@@ -11,11 +11,11 @@ minimal setup for katas in node
 
 ```
 module.exports = {
-  "spec":  "./!(node_modules)**/*.spec.js",
+  "spec":  "./src/**/*.spec.js",
   "recursive": true,
   "watch": true
 };
 ```
 
 5) Run command: "mocha", from top directory, or set "mocha" as the "test" command, in package.json
-6) Add .js code, and .spec.js tests as desired, and test results should update, live, in the terminal
+6) Inside a "src" directory, add .js code, and .spec.js tests as desired, and test results should update, live, in the terminal
